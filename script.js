@@ -307,7 +307,10 @@ gsap.from(".project-card", {
       }
     });
   });
+// ONLY REPLACE THE .reveal-section ANIMATION CODE
+// Find this section in your script.js and replace it:
 
+/*
   gsap.utils.toArray('.reveal-section').forEach(section => {
     gsap.from(section, {
       opacity: 0,
@@ -320,6 +323,34 @@ gsap.from(".project-card", {
       }
     });
   });
+*/
+
+gsap.utils.toArray('.reveal-section').forEach(section => {
+  // Set initial state to visible (not hidden)
+  gsap.set(section, { 
+    opacity: 1, 
+    y: 0 
+  });
+  
+  // Only animate on scroll if not already visible
+  gsap.from(section, {
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+      end: "top 20%",
+      toggleActions: "play none none reset",
+      // Add this to prevent issues
+      once: false,
+      // Debug to see trigger points (remove after testing)
+      // markers: true
+    }
+  });
+});
+
+// That's it! Don't touch any other animations in your script.js
 
   // Up coming projects
 

@@ -156,7 +156,7 @@
 /* Mobile */
 @media (max-width: 480px) {
   .button {
-    --fs-size: 1.7em;  /* smaller font on small phones */
+    --fs-size: 1.5em;  /* smaller font on small phones */
     letter-spacing: 1.5px;
     padding: 0 3px;     /* reduce padding */
   }
@@ -1226,5 +1226,34 @@ ul.example-2 {
 
 .profile-wrapper:hover .profile-img {
   filter: grayscale(100%);
+}
+
+.reveal-section.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Alternative: Only animate on first view */
+.reveal-section {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#tech-stack img,
+#tech-stack i,
+.reveal-section img,
+.reveal-section i {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 

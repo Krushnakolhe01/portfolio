@@ -146,6 +146,22 @@
   -webkit-text-stroke: 1px var(--animation-color);
 }
 
+@media (max-width: 768px) {
+  .button {
+    --fs-size: 1.6em;
+    letter-spacing: 2px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .button {
+    --fs-size: 1.7em;  /* smaller font on small phones */
+    letter-spacing: 1.5px;
+    padding: 0 3px;     /* reduce padding */
+  }
+}
+
 /* Trigger hover effect */
 .button:hover .hover-text {
   width: 100%;
@@ -1120,10 +1136,9 @@ ul.example-2 {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
-
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 5vh; /* 5% of viewport height, scales on mobile */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -1151,6 +1166,14 @@ ul.example-2 {
   transform: translateX(-50%);
   animation: scrollWheel 1.6s infinite;
 }
+
+/* Optional: Fine-tune for very small phones */
+@media (max-width: 480px) {
+  .scroll-indicator {
+    bottom: 14vh;  /* slightly closer to content */
+  }
+}
+
 
 .scroll-text {
   display: block;

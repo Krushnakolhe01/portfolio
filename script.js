@@ -380,8 +380,8 @@ gsap.utils.toArray('.reveal-section').forEach(section => {
           setTimeout(() => {
             // Create a temporary link to trigger download
             const tempLink = document.createElement('a');
-            tempLink.href = './assets/atharvacv.pdf';
-            tempLink.download = 'atharvacv.pdf';
+            // tempLink.href = './assets/.pdf';
+            // tempLink.download = 'cv.pdf';            
             document.body.appendChild(tempLink);
             tempLink.click();
             document.body.removeChild(tempLink);
